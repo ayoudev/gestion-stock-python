@@ -11,7 +11,7 @@ class Compte:
     @staticmethod
     def verifier_compte(nom_utilisateur, mot_de_passe):
         cnx = mysql.connector.connect(user='root', password='', host='localhost',
-                                      database='')
+                                      database='PFA')
         cursor = cnx.cursor()
 
         requete_verification = ("SELECT id FROM comptes "
@@ -29,7 +29,7 @@ class Compte:
     @staticmethod
     def ajouter(nom_utilisateur, mot_de_passe):
         cnx = mysql.connector.connect(user='root', password='', host='localhost',
-                                      database='')
+                                      database='PFA')
         cursor = cnx.cursor()
 
         requete_ajout = ("INSERT INTO comptes (nom_utilisateur, mot_de_passe) "
@@ -48,8 +48,8 @@ class Compte:
 
     @staticmethod
     def modifier(id_compte, nom_utilisateur, mot_de_passe):
-        cnx = mysql.connector.connect(user='root', password='motdepasse', host='localhost',
-                                      database='ma_base_de_donnees')
+        cnx = mysql.connector.connect(user='root', password='', host='localhost',
+                                      database='PFA')
         cursor = cnx.cursor()
 
         requete_modification = ("UPDATE comptes SET nom_utilisateur = %s, mot_de_passe = %s "
@@ -64,8 +64,8 @@ class Compte:
 
     @staticmethod
     def supprimer(id_compte):
-        cnx = mysql.connector.connect(user='root', password='motdepasse', host='localhost',
-                                      database='ma_base_de_donnees')
+        cnx = mysql.connector.connect(user='root', password='', host='localhost',
+                                      database='PFA')
         cursor = cnx.cursor()
 
         requete_suppression = ("DELETE FROM comptes "

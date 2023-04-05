@@ -9,12 +9,13 @@ class Client:
         self.adresse = adresse
         self.dateClient = dateClient
 
+
     def Ajouter(self):
         conn = mysql.connector.connect(
             host="localhost",
             user="root",
             password="",
-            database=""
+            database="PFA"
         )
         cursor = conn.cursor()
         sql = "INSERT INTO clients (Nom, Tel, Mail, Adresse, DateClient) VALUES (%s, %s, %s, %s, %s)"
@@ -28,7 +29,7 @@ class Client:
             host="localhost",
             user="",
             password="",
-            database=""
+            database="PFA"
         )
         cursor = conn.cursor()
         sql = "UPDATE clients SET Nom=%s, Tel=%s, Mail=%s, Adresse=%s, DateClient=%s WHERE ID=%s"
@@ -42,7 +43,7 @@ class Client:
             host="localhost",
             user="",
             password="",
-            database=""
+            database="PFA"
         )
         cursor = conn.cursor()
         sql = "DELETE FROM clients WHERE ID=%s"
@@ -54,9 +55,9 @@ class Client:
     def Afficher(self):
         conn = mysql.connector.connect(
             host="localhost",
-            user="yourusername",
-            password="yourpassword",
-            database="yourdatabase"
+            user="root",
+            password="",
+            database="PFA"
         )
         cursor = conn.cursor()
         sql = "SELECT * FROM clients WHERE ID=%s"
@@ -68,9 +69,9 @@ class Client:
     def chercher(self, nom):
         conn = mysql.connector.connect(
             host="localhost",
-            user="yourusername",
-            password="yourpassword",
-            database="yourdatabase"
+            user="root",
+            password="",
+            database="PFA"
         )
         cursor = conn.cursor()
         sql = "SELECT * FROM clients WHERE Nom LIKE %s"

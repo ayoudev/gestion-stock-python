@@ -9,7 +9,7 @@ class Fournisseur:
         self.EmailFornisseur = EmailFornisseur
         self.AdresseFornisseur = AdresseFornisseur
         self.conn = mysql.connector.connect(host='localhost',
-                                            database='',
+                                            database='PFA',
                                             user='root',
                                             password='')
         self.cursor = self.conn.cursor()

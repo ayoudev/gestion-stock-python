@@ -10,7 +10,7 @@ class Commande:
         self.TOTAL_TTC = TOTAL_TTC
 
     def Ajouter(self):
-        conn = mysql.connector.connect(user='root', password='', host='localhost', database='')
+        conn = mysql.connector.connect(user='root', password='', host='localhost', database='PFA')
         cursor = conn.cursor()
         sql = "INSERT INTO Commandes (IDcommande, DateCommande, idClient, Total_HT, TVA, TOTAL_TTC) VALUES (%s, %s, %s, %s, %s, %s)"
         val = (self.IDcommande, self.DateCommande, self.idClient, self.Total_HT, self.TVA, self.TOTAL_TTC)
@@ -19,14 +19,14 @@ class Commande:
         print(cursor.rowcount, "enregistrement ajouté")
 
     def Afficher(self):
-        conn = mysql.connector.connect(user='root', password='', host='localhost', database='')
+        conn = mysql.connector.connect(user='root', password='', host='localhost', database='PFA')
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM Commandes WHERE IDcommande = {}".format(self.IDcommande))
         result = cursor.fetchone()
         return result
 
     def chercher(self, dateCommande):
-        conn = mysql.connector.connect(user='root', password='', host='localhost', database='')
+        conn = mysql.connector.connect(user='root', password='', host='localhost', database='PFA')
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM Commandes WHERE DateCommande = '{}'".format(dateCommande))
         result = cursor.fetchall()

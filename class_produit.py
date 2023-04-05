@@ -14,7 +14,7 @@ class Produits:
         self.id_categorie = id_categorie
 
     def ajouter(self):
-        cnx = mysql.connector.connect(user='root', password='', host='localhost', database='')
+        cnx = mysql.connector.connect(user='root', password='', host='localhost', database='PFA')
         cursor = cnx.cursor()
         ajout_produit = ("INSERT INTO produits "
                          "(num, nom, description, prix_unitaire, quantite_en_stock, seuil_alerte_stock, date_derniere_entree_stock, date_derniere_sortie_stock, image, id_categorie) "
@@ -26,7 +26,7 @@ class Produits:
         cnx.close()
 
     def modifier(self):
-        cnx = mysql.connector.connect(user='root', password='', host='localhost', database='')
+        cnx = mysql.connector.connect(user='root', password='', host='localhost', database='PFA')
         cursor = cnx.cursor()
         modification_produit = ("UPDATE produits "
                                 "SET nom = %s, description = %s, prix_unitaire = %s, quantite_en_stock = %s, seuil_alerte_stock = %s, date_derniere_entree_stock = %s, date_derniere_sortie_stock = %s, image = %s, id_categorie = %s "
@@ -38,7 +38,7 @@ class Produits:
         cnx.close()
 
     def supprimer(self):
-        cnx = mysql.connector.connect(user='root', password='', host='localhost', database='')
+        cnx = mysql.connector.connect(user='root', password='', host='localhost', database='PFA')
         cursor = cnx.cursor()
         suppression_produit = ("DELETE FROM produits "
                                "WHERE num = %s")
@@ -50,7 +50,7 @@ class Produits:
 
     @staticmethod
     def afficher(nom_produit):
-        cnx = mysql.connector.connect(user='root', password='', host='localhost', database='')
+        cnx = mysql.connector.connect(user='root', password='', host='localhost', database='PFA')
         cursor = cnx.cursor()
         requete_produit = ("SELECT * FROM produits "
                            "WHERE nom = %s")
@@ -71,7 +71,7 @@ class Produits:
         @staticmethod
         def rechercher_par_critere(critere, valeur):
             cnx = mysql.connector.connect(user='root', password='', host='localhost',
-                                          database='')
+                                          database='PFA')
             cursor = cnx.cursor()
             if critere == 'nom':
                 requete_produits = ("SELECT * FROM produits "

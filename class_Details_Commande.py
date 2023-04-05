@@ -19,7 +19,7 @@ class Details_Commande:
             host="localhost",
             user="root",
             password="",
-            database=""
+            database="PFA"
         )
         mycursor = mydb.cursor()
         
@@ -36,7 +36,7 @@ class Details_Commande:
             host="localhost",
             user="root",
             password="",
-            database=""
+            database="PFA"
         )
         mycursor = mydb.cursor()
         
@@ -54,7 +54,7 @@ class Details_Commande:
             host="localhost",
             user="root",
             password="",
-            database=""
+            database="PFA"
         )
         mycursor = mydb.cursor()
         

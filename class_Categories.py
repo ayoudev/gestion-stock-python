@@ -44,7 +44,7 @@ class Categories:
     def supprimer(self):
         connexion = mysql.connector.connect(user='root', password='',
                                              host='localhost',
-                                             database='')
+                                             database='PFA')
         curseur = connexion.cursor()
 
         supp_categorie = ("DELETE FROM Categories WHERE id_categorie = %s")
@@ -62,7 +62,7 @@ class Categories:
     def afficher():
         connexion = mysql.connector.connect(user='root', password='',
                                              host='localhost',
-                                             database='')
+                                             database='PFA')
         curseur = connexion.cursor()
 
         affichage_categories = "SELECT * FROM Categories"
