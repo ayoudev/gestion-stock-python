@@ -1,9 +1,6 @@
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QWidget
-import sys
-import signup
-su=signup.Ui_Signup()
+import sys 
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -36,7 +33,8 @@ class Ui_MainWindow(object):
 "border-bottom-left-radius: 20px;\n"
 "border-top-left-radius: 20px;")
         self.label_2.setText("")
-        self.label_2.setScaledContents(False)
+        self.label_2.setPixmap(QtGui.QPixmap("image/Checking boxes (1).gif"))
+        self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.widget_2 = QtWidgets.QWidget(self.widget)
         self.widget_2.setGeometry(QtCore.QRect(340, 30, 411, 441))
@@ -127,7 +125,6 @@ class Ui_MainWindow(object):
         self.pushButton_2.setIcon(icon)
         self.pushButton_2.setIconSize(QtCore.QSize(30, 30))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.clicked.connect(lambda:MainWindow.exit())
         self.label_7 = QtWidgets.QLabel(self.widget_2)
         self.label_7.setGeometry(QtCore.QRect(120, 410, 111, 20))
         self.label_7.setStyleSheet("color:rgba(0, 0, 0, 0.464);")
@@ -136,7 +133,7 @@ class Ui_MainWindow(object):
         self.pushButton_3.setGeometry(QtCore.QRect(240, 410, 71, 20))
         self.pushButton_3.setStyleSheet("color:rgba(11, 131, 120, 219);")
         self.pushButton_3.setObjectName("pushButton_3")
-        #self.pushButton_3.clicked.connect(self.tosignup)
+        self.pushButton_2.clicked.connect(lambda:MainWindow.exit())
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 951, 26))
@@ -145,15 +142,10 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+        
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    #def tosign(MainWindow):
-     #   su=signup.Ui_Signup()
-      #  QtWidgets.QStackedWidget.addWidget(su)
-       # QtWidgets.QStackedWidget.setCurrentIndex(QtWidgets.QStackedWidget.currentIndex()+1)
-
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -165,11 +157,11 @@ class Ui_MainWindow(object):
         self.label_6.setText(_translate("MainWindow", "Se Connecter"))
         self.label_7.setText(_translate("MainWindow", "Creer votre compte"))
         self.pushButton_3.setText(_translate("MainWindow", "Cliquez ici"))
-
 if __name__ == "__main__":
      app = QtWidgets.QApplication(sys.argv)
      ui=Ui_MainWindow()
-     MainWindow = QtWidgets.QMainWindow()
-     ui.setupUi(MainWindow)
-     MainWindow.show()
+     Signup = QtWidgets.QMainWindow()
+     ui.setupUi(Signup)
+     Signup.show()
      sys.exit(app.exec_())
+

@@ -71,8 +71,11 @@ border-top-left-radius: 20px;</string>
      <property name="text">
       <string/>
      </property>
+     <property name="pixmap">
+      <pixmap>image/Checking boxes (1).gif</pixmap>
+     </property>
      <property name="scaledContents">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="buddy">
       <cstring>border-raduis:20px;</cstring>

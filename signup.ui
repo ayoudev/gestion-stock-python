@@ -17,11 +17,14 @@
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>69</x>
-      <y>130</y>
+      <x>70</x>
+      <y>60</y>
       <width>591</width>
       <height>341</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 255, 255);</string>
     </property>
    </widget>
   </widget>
